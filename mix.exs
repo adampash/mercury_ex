@@ -2,12 +2,16 @@ defmodule Mercury.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :mercury,
-     version: "0.1.0",
-     elixir: "~> 1.3",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     deps: deps()]
+    [
+      app: :mercury,
+      version: "0.1.0",
+      elixir: "~> 1.3",
+      build_embedded: Mix.env == :prod,
+      start_permanent: Mix.env == :prod,
+      deps: deps(),
+      package: package(),
+      description: description(),
+    ]
   end
 
   # Configuration for the OTP application
@@ -16,6 +20,23 @@ defmodule Mercury.Mixfile do
   def application do
     [applications: [:logger, :httpoison]]
   end
+
+  def package do
+    [
+      maintainers: ["Adam Pash"],
+      name: "mercury",
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/adampash/mercury_ex"},
+    ]
+  end
+
+  def description do
+    """
+    A simple wrapper for the [Mercury Web Parser API](https://mercury.postlight.com/web-parser/),
+    powered by HTTPoison.
+    """
+  end
+
 
   # Dependencies can be Hex packages:
   #
