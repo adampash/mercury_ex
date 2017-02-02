@@ -12,7 +12,7 @@ defmodule Mercury do
     @base_url <> "?" <> URI.encode_query(params)
   end
 
-  defp process_request_headers(headers), do: headers ++ ["x-api-key": @api_key]
+  defp process_request_headers(headers), do: headers ++ ["x-api-key": api_key]
 
   defp process_response_body(body) do
     body
