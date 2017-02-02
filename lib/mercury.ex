@@ -1,15 +1,18 @@
 defmodule Mercury do
   @moduledoc """
-    A simple wrapper for the Mercury Web Parser API (https://mercury.postlight.com/web-parser/),
+    A simple wrapper for the [Mercury Web Parser API](https://mercury.postlight.com/web-parser/),
     powered by HTTPoison.
 
-    > The Mercury Parser extracts the bits that humans care about from any URL you give it.
-    > That includes article content, titles, authors, published dates, excerpts, lead images, and more.
+    The Mercury Parser extracts the bits that humans care about from any URL you give it.
+    That includes article content, titles, authors, published dates, excerpts, lead images, and more.
 
     To use, just run:
 
     ```
-    Mercury.parse(url)
+    {:ok, response} = Mercury.parse(url)
+
+		# -- OR --
+    %{body: body} = Mercury.parse!(url)
     ```
   """
 
