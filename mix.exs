@@ -50,6 +50,7 @@ defmodule Mercury.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 0.11.0"},
+      {:ex_doc, ">= 0.0.0", only: :dev},
     ]
   end
 end
