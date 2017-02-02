@@ -24,3 +24,15 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
     ```
 
 If you don't already have one, you can sign up for a Mercury Parser API key [here](https://mercury.postlight.com/web-parser/).
+
+## Usage
+
+To fetch the content for an article, run:
+
+```elixir
+{:ok, response} = Mercury.parse("https://trackchanges.postlight.com/extracting-content-from-the-chaos-of-the-web-introducing-the-mercury-web-parser-e920a1db7f86")
+
+# -- OR --
+
+%{body: body} = Mercury.parse!("https://trackchanges.postlight.com/extracting-content-from-the-chaos-of-the-web-introducing-the-mercury-web-parser-e920a1db7f86")
+```

@@ -12,6 +12,7 @@ defmodule Mercury do
     {:ok, response} = Mercury.parse(url)
 
 		# -- OR --
+
     %{body: body} = Mercury.parse!(url)
     ```
   """
