@@ -1,10 +1,34 @@
 defmodule Mercury do
+  @moduledoc """
+    A simple wrapper for the Mercury Web Parser API (https://mercury.postlight.com/web-parser/),
+    powered by HTTPoison.
+
+    > The Mercury Parser extracts the bits that humans care about from any URL you give it.
+    > That includes article content, titles, authors, published dates, excerpts, lead images, and more.
+
+    To use, just run:
+
+    ```
+    Mercury.parse(url)
+    ```
+  """
+
   use HTTPoison.Base
 
   @base_url "https://mercury.postlight.com/parser"
 
+  @doc """
+  iex> {:ok, response} = Mercury.parse("https://trackchanges.postlight.com/building-awesome-cms-f034344d8ed")
+  """
   def parse(url) do
-    get!(url)
+    get(url)
+  end
+
+  @doc """
+  iex> %{body: body} = Mercury.parse("https://trackchanges.postlight.com/building-awesome-cms-f034344d8ed")
+  """
+  def parse!(url) do
+    get(url)
   end
 
   def process_url(url) do
@@ -19,7 +43,7 @@ defmodule Mercury do
     |> Poison.decode!
   end
 
-  def api_key do
+  defp api_key do
     Application.get_env(:mercury, :api_key)
   end
 
