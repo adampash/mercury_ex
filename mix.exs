@@ -32,7 +32,7 @@ defmodule Mercury.Mixfile do
 
   def description do
     """
-    A simple wrapper for the [Mercury Web Parser API](https://mercury.postlight.com/web-parser/),
+    A simple wrapper for the Mercury Web Parser API (https://mercury.postlight.com/web-parser/),
     powered by HTTPoison.
     """
   end

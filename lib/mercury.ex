@@ -20,9 +20,7 @@ defmodule Mercury do
   end
 
   def api_key do
-    app = Mix.Project.config[:app]
-
-    Application.get_env(app, :mercury_api_key)
+    Application.get_env(:mercury, :api_key)
   end
 
 end

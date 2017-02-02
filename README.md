@@ -1,6 +1,7 @@
 # Mercury
 
-**TODO: Add description**
+A simple wrapper for the [Mercury Web Parser API](https://mercury.postlight.com/web-parser/),
+powered by HTTPoison.
 
 ## Installation
 
@@ -14,11 +15,9 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
     end
     ```
 
-  2. Ensure `mercury` is started before your application:
+  2. Add your Mercury API key to your `config.exs`
 
     ```elixir
-    def application do
-      [applications: [:mercury]]
-    end
+    config :mercury, :api_key
     ```
 
